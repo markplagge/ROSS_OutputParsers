@@ -1,0 +1,6 @@
+evts_second,names,secondary_rollbacks,primary_rollbacks,nodes,ns_cores,ranks_per_node,times,ranks
+249698356.9,/Users/mplagge/Google Drive/RPI Work/tn_work/post-fix runs/runs/8k_runs/64-ranks-per_nemo_N128-R8192-SC8192-SM3.log,6131878,1535020,128,8192,64.0,52.8202,8192
+74363023.0,/Users/mplagge/Google Drive/RPI Work/tn_work/post-fix runs/runs/8k_runs/64-ranks-per_nemo_N16-R1024-SC8192-SM3.log,427373,340626,16,8192,64.0,177.3612,1024
+104901179.5,/Users/mplagge/Google Drive/RPI Work/tn_work/post-fix runs/runs/8k_runs/64-ranks-per_nemo_N32-R2048-SC8192-SM3.log,1272967,746675,32,8192,64.0,125.7289,2048
+150906010.6,/Users/mplagge/Google Drive/RPI Work/tn_work/post-fix runs/runs/8k_runs/64-ranks-per_nemo_N64-R4096-SC8192-SM3.log,2831403,1182693,64,8192,64.0,87.3995,4096
+405189089.4,/Users/mplagge/Google Drive/RPI Work/tn_work/post-fix runs/runs/8k_runs/64RP-S5_nemo_N512-R8192-SC8192-SM3.log,6132517,1534142,512,8192,16.0,32.5505,8192
