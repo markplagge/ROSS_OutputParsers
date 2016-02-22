@@ -12,7 +12,7 @@ import plotly.graph_objs as go
 ### Standard CMD Line Arg Parser / Main Entry Point
 
 
-     
+
 
 
 def loadNemoStats(filename="ross.csv",ehdrs="second_row_hdrs.csv",runhdrs="first_row_hdrs.csv"):
@@ -33,19 +33,19 @@ def loadNemoStats(filename="ross.csv",ehdrs="second_row_hdrs.csv",runhdrs="first
                 myRow = 0;
                 for e_hdr in oheaders:
                     for elem in e_hdr:
-                        headers.append(elem)          
+                        headers.append(elem)
                 for e_hdr in eheaders:
                     for elem in e_hdr:
-                        headers.append(elem) 
-                
+                        headers.append(elem)
+
                # print (headers)
-                
+
                 myRow = 0
                 oddRows = []
                 evenRows = []
                 values = []
                 for line in reader:
-                    
+
                     if (myRow % 2 == 0):
                         evenRows.append(line)
                     else:
@@ -57,9 +57,9 @@ def loadNemoStats(filename="ross.csv",ehdrs="second_row_hdrs.csv",runhdrs="first
                 statsCSV = dict(zip(headers,values))
                 print("\n\n\n*****************************************\n\n\n")
                 #print(statsCSV)
-                
+
     return headers,values
-                                    
+
 def combine(logdats, csvdats):
     pass
 
@@ -70,6 +70,7 @@ def createOut(filename,data):
 
 
 def parseLogs(path = os.curdir):
+    print("Looking for log files in " + str(path))
     logFiles = glob.glob(path+"*.log")
     print("Log files are " + str(logFiles))
     times = []
@@ -146,7 +147,7 @@ def parseLogs(path = os.curdir):
     #        reader = csv.reader(cvsfile, delimiter=",")
     #        for rowl,hdrl in zip(reader,eheaders):
     #            if (myRow % 2 == 0):
-                
+
     #                #print(",".join(row))
     #                print("Shoud be even row")
     #                for col,hdr in zip(rowl,hdrl):
@@ -157,7 +158,7 @@ def parseLogs(path = os.curdir):
     #                print("Should be odd row")
     #            myRow += 1
 
-    
+
 
 parser = argparse.ArgumentParser(description="Parse and Graph Nemo Ross Results")
 
@@ -167,7 +168,7 @@ parser = argparse.ArgumentParser(description="Parse and Graph Nemo Ross Results"
 
 parser.add_argument('-g', help='graph results', action='store_true')
 parser.add_argument('-Svc', help='specify save file name',default="saved_stats.csv")
-parser.add_argument('-p', help="specify log file reading dir", default="/Users/mplagge/Google Drive/RPI Work/tn_work/post-fix runs/runs/8k_runs/")
+parser.add_argument('-p', help="specify log file reading dir", default=os.curdir)
 parser.add_argument('-rc', help='ross csv file', default="ross.csv")
 parser.add_argument('-log', help="read only log files", default=False, action='store_true')
 
@@ -271,8 +272,3 @@ rpns = {}
 # fig = go.Figure(data=trace1,layput=layout)
 
 print(rpns)
-
-
-
-
-
